@@ -1,0 +1,5 @@
+.actionScriptProperties binary -merge
+
+org.eclipse.core.resources.prefs binary -merge
+
+.project binary -merge
