@@ -13,18 +13,20 @@ package com.aircapsule.breakOut.display
 	 * @author Liy
 	 * 
 	 */	
-	public class PhysicDO extends MovieClip
+	public class PhysicObject extends MovieClip
 	{
 		/**
 		 * Collision detection shape 
 		 */		
 		public var shape:Shape;
 		
+		protected var _dragging:Boolean = false;
+		
 		/**
 		 *  
 		 * 
 		 */		
-		public function PhysicDO()
+		public function PhysicObject()
 		{
 			this.addEventListener(MouseEvent.MOUSE_DOWN, mouseDownHandler, false, 0, true);
 			this.addEventListener(MouseEvent.MOUSE_UP, mouseUpHandler, false, 0, true);
@@ -33,10 +35,12 @@ package com.aircapsule.breakOut.display
 		
 		protected function mouseDownHandler($e:MouseEvent):void{
 			this.startDrag();
+			_dragging = true;
 		}
 		
 		protected function mouseUpHandler($e:MouseEvent):void{
 			this.stopDrag();
+			_dragging = false;
 		}
 		
 		protected function mouseMoveHandler($e:MouseEvent):void{
@@ -61,6 +65,10 @@ package com.aircapsule.breakOut.display
 			shape.affineTransform.rotate($value*Common.DEGREE_TO_RADIAN);
 			shape.affineTransform.translate(this.x, this.y);
 			super.rotation = $value;
+		}
+		
+		public function get dragging():Boolean{
+			return _dragging;
 		}
 	}
 }

@@ -74,6 +74,7 @@ package com.aircapsule.air.collision
 					break;
 				}
 				
+				++i;
 				if(i >= 5){
 					break;
 				}
@@ -87,7 +88,7 @@ package com.aircapsule.air.collision
 			if(dis < $shape1._margin+$shape2._margin && dis > _tolerence2){
 				var peneLength:Number = $shape1._margin+$shape2._margin - dis;
 				var witnesses:Vector.<Vector2D> = _simplex.getWitnessPoints();
-				var scInfo:ContactInfo = new ContactInfo(peneLength, witnesses, n.scaleNew(peneLength));
+				var scInfo:ContactInfo = new ContactInfo(peneLength, witnesses, n.scaleNew(peneLength), n);
 				
 				return scInfo;
 			}

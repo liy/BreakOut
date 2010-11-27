@@ -24,7 +24,7 @@ package com.aircapsule.air.collision.shape
 		
 		public var _alpha:Number = 0.8;
 		
-		public var _margin:Number = 5;
+		public var _margin:Number = 4;
 		
 		public function Shape()
 		{

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<actionScriptProperties mainApplicationPath="BreakOut.as" projectUUID="804f40c9-e864-4fe3-80cf-304817f7d264" version="6">
+<actionScriptProperties mainApplicationPath="com/aircapsule/BreakOut.as" projectUUID="804f40c9-e864-4fe3-80cf-304817f7d264" version="6">
   <compiler additionalCompilerArguments="-locale en_US" autoRSLOrdering="true" copyDependentFiles="false" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" verifyDigests="true" warn="false">
     <compilerSourcePath/>
     <libraryPath defaultLinkType="0">
@@ -28,7 +28,7 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="BreakOut.as"/>
+    <application path="com/aircapsule/BreakOut.as"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

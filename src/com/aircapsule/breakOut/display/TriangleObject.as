@@ -3,9 +3,9 @@ package com.aircapsule.breakOut.display
 	import com.aircapsule.air.World;
 	import com.aircapsule.air.collision.shape.Triangle;
 
-	public class TriangleDO extends PhysicDO
+	public class TriangleObject extends PhysicObject
 	{
-		public function TriangleDO()
+		public function TriangleObject()
 		{
 			shape = new Triangle();
 			
