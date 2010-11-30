@@ -25,6 +25,7 @@ package com.aircapsule.air.collision
 		public function GJKRaycast()
 		{
 			_simplex = new Simplex();
+			
 		}
 		
 		/**
@@ -34,7 +35,7 @@ package com.aircapsule.air.collision
 		 * @return 
 		 * 
 		 */
-		public function start($shape1:Shape, $shape2:Shape):Boolean{
+		public function start($shape1:Shape, $shape2:Shape):RayContactInfo{
 			_index = 0;
 			
 			var lambda:Number = 0;
@@ -77,7 +78,7 @@ package com.aircapsule.air.collision
 			while(v.length2 > _elipson2){
 				if(++_index > 10){
 					MonsterDebugger.trace(this, "out loop");
-					return false;
+					return null;
 				}
 				
 				var support1:Vector2D = $shape1.getSupport(v.clone());
@@ -89,8 +90,8 @@ package com.aircapsule.air.collision
 				
 				if(v.dot(w) > 0){
 					if(v.dot(r) >= 0){
-						//						MonsterDebugger.trace(this, "no intersection");
-						return false;
+//						MonsterDebugger.trace(this, "no intersection");
+						return null;
 					}
 					else{
 						lambda = lambda - v.dot(w)/v.dot(r);
@@ -115,17 +116,7 @@ package com.aircapsule.air.collision
 						break;
 				}
 				
-				//				if(_index == 2){
-				//					World.world().graphics.beginFill(0x000000, 1);
-				//					World.world().graphics.drawCircle(x.x, x.y, 4);
-				//				}
-				
 				c = _simplex.getClosestPoint();
-				
-				//				if(_index == 2){
-				//					World.world().graphics.beginFill(0xCCCC00, 0.2);
-				//					World.world().graphics.drawCircle(c.x, c.y, 8);
-				//				}
 				
 				// get closet point having problem!??!?!?!?!?!??!?!
 				v = x.subNew(c);
@@ -145,7 +136,7 @@ package com.aircapsule.air.collision
 			}
 			
 			
-			return true;
+			return  new RayContactInfo(s, r.getUnit(), n.normalize(), lambda, _simplex.getWitnessPoints());
 		}
 		
 		public function get simplex():Simplex{

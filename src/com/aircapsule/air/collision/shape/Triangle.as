@@ -4,9 +4,9 @@ package com.aircapsule.air.collision.shape
 
 	public class Triangle extends Shape
 	{
-		public function Triangle($A:Vector2D=null, $B:Vector2D=null, $C:Vector2D=null)
+		public function Triangle($edgeLen:Number=15, $A:Vector2D=null, $B:Vector2D=null, $C:Vector2D=null)
 		{
-			var v:Vector2D = new Vector2D(100, 0);
+			var v:Vector2D = new Vector2D($edgeLen, 0);
 			if($A == null){
 				$A = new Vector2D();
 			}

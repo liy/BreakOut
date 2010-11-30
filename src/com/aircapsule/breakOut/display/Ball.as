@@ -25,7 +25,7 @@ package com.aircapsule.breakOut.display
 			World.getVisual().addShape(shape);
 			
 			// test graphics
-			this.graphics.beginFill(0x000000, 0.5);
+			this.graphics.beginFill(0xFFFFFF, 1);
 			this.graphics.drawCircle(0, 0, _radius+shape._margin);
 			this.graphics.endFill();
 		}

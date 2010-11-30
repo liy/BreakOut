@@ -55,5 +55,15 @@ package com.aircapsule.air
 			}
 			this.graphics.endFill();
 		}
+		
+		public function drawCircle($pos:Vector2D, $radius:Number=5, $colour:uint=0xFF0000, $alpha:Number=0.8){
+			this.graphics.beginFill($colour, $alpha);
+			this.graphics.drawCircle($pos.x, $pos.y, $radius);
+			this.graphics.endFill();
+		}
+		
+		public function clearDraw():void{
+			this.graphics.clear();
+		}
 	}
 }

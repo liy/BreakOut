@@ -20,7 +20,20 @@ package com.aircapsule.breakOut.display
 		 */		
 		public var shape:Shape;
 		
+		/**
+		 * 
+		 */		
 		protected var _dragging:Boolean = false;
+		
+		/**
+		 * Friction: 0-1, 1 means none, 0 means max friction 
+		 */		
+		public var _friction:Number = 1;
+		
+		/**
+		 * bounce: 0-infinity, 0 means no bounce at all, 1 means rigid surface, >1 means extra bounce
+		 */		
+		public var _bounce:Number = 1;
 		
 		/**
 		 *  

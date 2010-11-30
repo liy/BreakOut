@@ -20,7 +20,7 @@ package com.aircapsule
 	
 	import nl.demonsters.debugger.MonsterDebugger;
 	
-	[SWF(width="400", height="300", frameRate="60", backgroundColor="#FFFFFF")]
+	[SWF(width="480", height="600", frameRate="60", backgroundColor="#000000")]
 	public class BreakOut extends Sprite
 	{
 		public function BreakOut(){
